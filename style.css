@@ -1,0 +1,186 @@
+/* ==========================================================================
+   PHANTOM DETECTIVE — Dark Crime Investigation Theme
+   ========================================================================== */
+:root{
+  --pd-bg: #0b0d12;
+  --pd-bg-alt: #12151d;
+  --pd-panel: #161a24;
+  --pd-panel-2: #1c2130;
+  --pd-border: #2a2f3d;
+  --pd-accent: #c8a24a;      /* detective gold */
+  --pd-accent-2: #8b1e1e;    /* evidence red */
+  --pd-text: #e7e6e1;
+  --pd-text-muted: #9aa0ad;
+  --pd-success: #4caf6d;
+  --pd-danger: #d9534f;
+  --font-display: 'Special Elite', cursive;
+  --font-body: 'Inter', sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  background: radial-gradient(circle at 20% 0%, #171b26 0%, var(--pd-bg) 55%) fixed;
+  color: var(--pd-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+a{ color: var(--pd-accent); text-decoration: none; }
+a:hover{ color: #e0c37a; }
+
+.pd-brand{ font-family: var(--font-display); letter-spacing: 1px; font-weight: 400; color: var(--pd-text) !important; }
+.pd-brand span{ color: var(--pd-accent); }
+
+/* ---------- Navbar ---------- */
+.pd-navbar{
+  background: rgba(11,13,18,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--pd-border);
+}
+.pd-navbar .nav-link{ color: var(--pd-text-muted); font-weight: 500; }
+.pd-navbar .nav-link:hover{ color: var(--pd-accent); }
+.pd-badge-name{ color: var(--pd-accent); font-weight: 600; }
+.pd-btn-accent{ background: var(--pd-accent); color:#161a24; font-weight:700; border:none; }
+.pd-btn-accent:hover{ background:#dcb75c; color:#0b0d12; }
+
+/* ---------- Hero ---------- */
+.pd-hero{
+  position: relative;
+  padding: 110px 0 90px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(11,13,18,0.55), rgba(11,13,18,0.95)),
+    repeating-linear-gradient(45deg, #14161d 0 2px, #0f1117 2px 40px);
+}
+.pd-hero h1{
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+  text-shadow: 0 0 30px rgba(200,162,74,0.25);
+}
+.pd-hero .accent{ color: var(--pd-accent); }
+.pd-hero p.lead{ color: var(--pd-text-muted); max-width: 620px; }
+.pd-tape{
+  display:inline-block; background: var(--pd-accent-2); color:#fff; font-size:.75rem;
+  padding: 3px 10px; letter-spacing: 2px; transform: rotate(-2deg); border-radius:2px;
+  font-weight:700;
+}
+
+/* ---------- Cards / Panels ---------- */
+.pd-panel{
+  background: var(--pd-panel);
+  border: 1px solid var(--pd-border);
+  border-radius: 14px;
+}
+.pd-card{
+  background: linear-gradient(180deg, var(--pd-panel-2), var(--pd-panel));
+  border: 1px solid var(--pd-border);
+  border-radius: 14px;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.pd-card:hover{
+  transform: translateY(-4px);
+  border-color: var(--pd-accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+.pd-glass{
+  background: rgba(22,26,36,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+}
+
+.pd-badge{ border:1px solid var(--pd-border); border-radius:20px; padding:3px 12px; font-size:.75rem; color:var(--pd-text-muted); }
+.pd-badge.diff-Easy{ color:#4caf6d; border-color:#2c5c3d; }
+.pd-badge.diff-Medium{ color:#e0b84a; border-color:#6b552a; }
+.pd-badge.diff-Hard{ color:#e06a6a; border-color:#6b2c2c; }
+
+.pd-eyebrow{ text-transform: uppercase; letter-spacing: 3px; font-size: .75rem; color: var(--pd-accent); font-weight:700; }
+
+/* ---------- Buttons ---------- */
+.btn-pd{
+  background: transparent; border: 1px solid var(--pd-accent); color: var(--pd-accent);
+  font-weight:600; border-radius: 8px;
+}
+.btn-pd:hover{ background: var(--pd-accent); color:#111; }
+.btn-pd-solid{ background: var(--pd-accent); border:1px solid var(--pd-accent); color:#111; font-weight:700; border-radius:8px; }
+.btn-pd-solid:hover{ background:#e0c37a; color:#0b0d12; }
+.btn-pd-danger{ background: var(--pd-accent-2); border:1px solid var(--pd-accent-2); color:#fff; font-weight:700; border-radius:8px; }
+.btn-pd-danger:hover{ background:#a52424; color:#fff; }
+
+/* ---------- Forms ---------- */
+.pd-form-control, .form-control, .form-select{
+  background: #10131b !important; color: var(--pd-text) !important;
+  border: 1px solid var(--pd-border) !important; border-radius: 8px;
+}
+.form-control:focus, .form-select:focus{
+  border-color: var(--pd-accent) !important; box-shadow: 0 0 0 .2rem rgba(200,162,74,.15) !important;
+}
+label{ color: var(--pd-text-muted); font-size:.85rem; font-weight:600; }
+
+/* ---------- Progress ---------- */
+.pd-progress{ background: #10131b; border-radius: 20px; height: 10px; overflow:hidden; border:1px solid var(--pd-border);}
+.pd-progress > div{ background: linear-gradient(90deg, var(--pd-accent-2), var(--pd-accent)); height:100%; }
+
+/* ---------- Evidence / Suspect Cards ---------- */
+.evidence-card, .suspect-card{
+  background: var(--pd-panel-2); border:1px solid var(--pd-border); border-radius: 12px; padding: 16px;
+}
+.evidence-card .rel-Critical{ color:#e06a6a; }
+.evidence-card .rel-High{ color:#e0b84a; }
+.evidence-card .rel-Medium{ color:#8fb3d9; }
+.evidence-card .rel-Low{ color:#9aa0ad; }
+
+.hotspot{
+  position:absolute; width:46px; height:46px; border-radius:50%;
+  background: rgba(200,162,74,0.18); border: 2px dashed var(--pd-accent);
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  animation: pulse 2s infinite;
+}
+.hotspot.found{ background: rgba(76,175,109,.25); border-color: var(--pd-success); animation:none; }
+.hotspot i{ color: var(--pd-accent); }
+.hotspot.found i{ color: var(--pd-success); }
+@keyframes pulse{
+  0%{ box-shadow: 0 0 0 0 rgba(200,162,74,.45); }
+  70%{ box-shadow: 0 0 0 14px rgba(200,162,74,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(200,162,74,0); }
+}
+
+.crime-scene-wrap{ position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--pd-border); background:#0e1015; min-height: 420px;}
+
+/* ---------- Deduction board ---------- */
+.deduction-slot{
+  border: 2px dashed var(--pd-border); border-radius: 12px; min-height: 90px;
+  display:flex; align-items:center; justify-content:center; color: var(--pd-text-muted);
+  font-size:.85rem; padding:10px; text-align:center;
+}
+.deduction-slot.filled{ border-style:solid; border-color: var(--pd-accent); color: var(--pd-text); background: rgba(200,162,74,.08); }
+.deduction-arrow{ color: var(--pd-accent); font-size:1.4rem; }
+
+/* ---------- Suspicion meter ---------- */
+.suspicion-High .badge{ background:#6b2c2c; }
+.suspicion-Medium .badge{ background:#6b552a; }
+.suspicion-Low .badge{ background:#2c5c3d; }
+
+/* ---------- Tables (admin) ---------- */
+table.pd-table{ color: var(--pd-text); }
+table.pd-table thead{ background: var(--pd-panel-2); }
+table.pd-table td, table.pd-table th{ border-color: var(--pd-border) !important; vertical-align: middle;}
+
+/* ---------- Footer ---------- */
+.pd-footer{ background: var(--pd-bg-alt); border-top: 1px solid var(--pd-border); margin-top: 60px; }
+.pd-footer-heading{ color: var(--pd-accent); font-size:.8rem; letter-spacing:1px; }
+.pd-footer ul li{ margin-bottom:6px; }
+.pd-footer a{ color: var(--pd-text-muted); }
+.pd-footer a:hover{ color: var(--pd-accent); }
+
+/* ---------- Misc ---------- */
+.pd-stat{ font-family: var(--font-display); font-size: 2rem; color: var(--pd-accent); }
+.pd-scroll-x{ overflow-x:auto; }
+.fade-in{ animation: fadeIn .5s ease both; }
+@keyframes fadeIn{ from{opacity:0; transform: translateY(8px);} to{opacity:1; transform:none;} }
+
+.sidebar-admin{ background: var(--pd-panel); border-right:1px solid var(--pd-border); min-height: calc(100vh - 0px); }
+.sidebar-admin a{ color: var(--pd-text-muted); display:block; padding:10px 16px; border-radius:8px; }
+.sidebar-admin a.active, .sidebar-admin a:hover{ background: var(--pd-panel-2); color: var(--pd-accent); }
