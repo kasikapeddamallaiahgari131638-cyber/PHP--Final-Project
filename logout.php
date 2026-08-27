@@ -1,12 +1,6 @@
 <?php
-require_once __DIR__ . '/includes/auth.php';
-require_once __DIR__ . '/config/database.php';
-
-if (!empty($_SESSION['user_id'])) {
-    log_activity($pdo, $_SESSION['user_id'], 'logout', 'User logged out');
-}
-
-$_SESSION = [];
-session_destroy();
+require_once __DIR__ . '/../includes/admin_auth.php';
+$_SESSION['admin_id'] = null;
+unset($_SESSION['admin_id'], $_SESSION['admin_name']);
 header('Location: login.php');
 exit;
